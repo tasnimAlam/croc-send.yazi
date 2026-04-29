@@ -1,5 +1,9 @@
 # croc-send.yazi
 
+## Demo
+
+<video src="https://github.com/user-attachments/assets/1c1dc456-2435-4543-8b5f-dade890f8da4" controls></video>
+
 ## Requirements
 
 - [Yazi](https://github.com/sxyazi/yazi) ≥ 25.5.28
