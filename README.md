@@ -1,1 +1,52 @@
 # croc-send.yazi
+
+## Requirements
+
+- [Yazi](https://github.com/sxyazi/yazi) ≥ 25.5.28
+- [croc](https://github.com/schollz/croc) installed and available in `$PATH`
+
+## Installation
+
+```sh
+ya pack -a tasnimAlam/croc-send
+```
+
+Or clone manually:
+
+```sh
+git clone https://github.com/tasnimAlam/croc-send.yazi \
+  ~/.config/yazi/plugins/croc-send.yazi
+```
+
+## Usage
+
+Add a keybinding in `~/.config/yazi/keymap.toml`:
+
+```toml
+[[manager.prepend_keymap]]
+on   = ["c", "s"]
+run  = "plugin croc-send"
+desc = "Send files with croc"
+```
+
+To send with a custom passphrase:
+
+```toml
+[[manager.prepend_keymap]]
+on   = ["c", "S"]
+run  = "plugin croc-send -- my-passphrase"
+desc = "Send file(s) with croc using a custom passphrase"
+```
+
+### Behaviour
+
+- If files are **selected** (multi-select), all selected files are sent.
+- If nothing is selected, the **hovered** file is sent.
+- Yazi hands the terminal to croc so its passphrase and progress bar are fully visible.
+- After the transfer completes, Yazi is restored.
+
+The receiver runs:
+
+```sh
+croc <passphrase>
+```
