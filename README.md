@@ -8,7 +8,7 @@
 ## Installation
 
 ```sh
-ya pack -a tasnimAlam/croc-send
+ya pkg add tasnimAlam/croc-send
 ```
 
 Or clone manually:
