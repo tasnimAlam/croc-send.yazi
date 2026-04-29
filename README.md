@@ -1,4 +1,5 @@
 # croc-send.yazi
+Send selected files using croc
 
 ## Demo
 
