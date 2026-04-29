@@ -21,7 +21,7 @@ local function fail(s, ...)
 end
 
 return {
-	entry = function(self, job)
+	entry = function()
 		ya.emit("escape", { visual = true })
 
 		local urls = selected_or_hovered()
@@ -35,15 +35,6 @@ return {
 		end
 
 		local args = { "send" }
-
-		-- Optional custom passphrase as first positional argument:
-		--   plugin croc-send -- mypassphrase
-		local code = job and job.args and job.args[1]
-		if type(code) == "string" and code ~= "" then
-			table.insert(args, "--code")
-			table.insert(args, code)
-		end
-
 		for _, url in ipairs(urls) do
 			table.insert(args, url)
 		end

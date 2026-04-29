@@ -29,15 +29,6 @@ run  = "plugin croc-send"
 desc = "Send files with croc"
 ```
 
-To send with a custom passphrase:
-
-```toml
-[[manager.prepend_keymap]]
-on   = ["c", "S"]
-run  = "plugin croc-send -- my-passphrase"
-desc = "Send file(s) with croc using a custom passphrase"
-```
-
 ### Behaviour
 
 - If files are **selected** (multi-select), all selected files are sent.
